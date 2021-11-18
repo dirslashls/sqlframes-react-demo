@@ -8,11 +8,33 @@ module.exports = {
   // Where webpack looks to start building the bundle
   entry: [paths.src + '/index.js'],
 
+  externals: [
+    'node-fetch',
+    'requirejs',
+    'date-fns',
+    'preact',
+    'eta',
+    'htm',
+    'dompurify',
+    'papaparse',
+    'monaco-editor',
+    'echarts',
+    '@yaireo/tagify',
+    'interactjs',
+    'lunr',
+    'highlight.js/lib/core',
+    'highlight.js/lib/languages/sql',
+    'cytoscape',
+    'exceljs',
+  ],
   // Where webpack outputs the assets and bundles
   output: {
     path: paths.build,
     filename: '[name].bundle.js',
     publicPath: '/',
+    library: {
+      type: 'amd-require'
+    }
   },
 
   // Customize the webpack build process
@@ -34,10 +56,34 @@ module.exports = {
       ],
     }),
 
+    new CopyWebpackPlugin(
+      { 
+        patterns: [{
+          from: 'node_modules/@sqlframes/repl-app/dist/libs.js', to: 'js/sqlframes/libs.js' 
+        },{
+          from: 'node_modules/@sqlframes/repl-app/dist/main.js', to: 'js/sqlframes/main.js' 
+        },
+        ]
+      }),
+
+    new CopyWebpackPlugin(
+      { 
+        patterns: [{
+          from: 'node_modules/@sqlframes/repl-app/dist/api.d.ts', to: 'api/api.d.ts' },
+        ]
+      }),
+
+    new CopyWebpackPlugin(
+      { 
+        patterns: [{
+          from: 'node_modules/@sqlframes/repl-app/dist/styles/themes/*', to: 'styles/themes/[name][ext]' },
+        ]
+      }),
+
     // Generates an HTML file from a template
     // Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
     new HtmlWebpackPlugin({
-      title: 'webpack Boilerplate',
+      title: 'SQL Frames + React DEMO',
       // favicon: paths.src + '/images/favicon.png',
       template: paths.src + '/template.html', // template file
       filename: 'index.html', // output file

@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "Demo app to show SQL Frames integration with React",
   "main": "index.js",
-  "author": { "name": "SQL Frames", "url": "https://sqlframes.com/" },
+  "author": {
+    "name": "SQL Frames",
+    "url": "https://sqlframes.com/"
+  },
   "license": "MIT",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
@@ -19,6 +22,7 @@
     "@babel/core": "^7.15.8",
     "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.16.0",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^9.0.1",
@@ -47,5 +51,8 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:dirslashls/sqlframes-react-demo"
+  },
+  "dependencies": {
+    "@sqlframes/repl-app": "../lsdash/dist/sqlframes-repl-app-0.9.23.tgz"
   }
 }

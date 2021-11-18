@@ -1,10 +1,10 @@
 _This repository is based on the [Webpack boilerplate repository](https://github.com/taniarascia/webpack-boilerplate)_ 
 # SQL Frames + React DEMO
 
-This repository provides a working example of how to integrate SQL Frames with React. Each application is unique in its needs and dependencies. Hence, this should only be taken as a reference and should not rely on this for a complete solution that requires the application to work with many other internal/external dependencies. A strong understanding of Webpack, ES Modules and AMD (require.js) can come a long way to solve complex application specific bundling requirements.
+This repository provides a working example of how to integrate [SQL Frames](https://sqlframes.com) with React. Each application is unique in its needs and dependencies. Hence, this should only be taken as a reference and should not rely on this for a complete solution for the application to work with many other internal/external dependencies. A strong understanding of Webpack, ES Modules and AMD (require.js) can come a long way to solve complex application specific bundling requirements.
 
 ***
-DISCLAIMER - This code is provided only as an example and does not come with any implied guarantee of support. Support for **SQL Frames** is only available through the commercial licensing agreement of **SQL Frames** (talk to your manager or organization).
+DISCLAIMER - This code is provided only as an example and does not come with any implied guarantee of support. Official support is only available through the commercial licensing of **SQL Frames**.
 ***
 
 ## Theory
@@ -13,7 +13,7 @@ You can skip this and directly go to [Install & Start](#install_start) to get st
 
 ### Why the complexity?
 
-[**SQL Frames**](https://sqlframes.com) is an in-browser in-memory data, visualization and intelligence platform with several building blocks. Not all application need all the functionality of **SQL Frames**. In a traditional desktop or server-side software, there is usually no need worry to about the final executable size. However, that is not the case with code within the browser as it needs to be downloaded, compiled and executed and that can increase the initial load and render times. Hence, **SQL Frames** is designed to have several types of dependencies
+**SQL Frames** is an in-browser in-memory data, visualization and intelligence platform with several building blocks. Not all application need all the functionality of **SQL Frames**. In a traditional desktop or server-side software, there is usually no need worry to about the final executable size. However, that is not the case with code within the browser as it needs to be downloaded, compiled and executed and that can increase the initial load and render times. Hence, **SQL Frames** is designed to have several types of dependencies
 
 1. required dependencies - these are must to make **SQL Frames** to work
 1. optional dependencies - these are optional and certain features of **SQL Frames** will not work if these dependencies are not provided

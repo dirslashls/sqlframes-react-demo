@@ -1,6 +1,7 @@
+_This repository is based on the [Webpack boilerplate repository](https://github.com/taniarascia/webpack-boilerplate)_ 
 # SQL Frames + React DEMO
 
-This repository provides a working example of how to integrate SQL Frames with React. Each application is unique in its needs and dependencies. Hence, this should only be taken as a reference and should not rely on this for a complete solution that requires the application to work with many other internal/external dependencies. A strong understanding of Webpack and AMD (require.js) can come a long way to solve complex application specific bundling requirements.
+This repository provides a working example of how to integrate SQL Frames with React. Each application is unique in its needs and dependencies. Hence, this should only be taken as a reference and should not rely on this for a complete solution that requires the application to work with many other internal/external dependencies. A strong understanding of Webpack, ES Modules and AMD (require.js) can come a long way to solve complex application specific bundling requirements.
 
 ***
 DISCLAIMER - This code is provided only as an example and does not come with any implied guarantee of support. Support for **SQL Frames** is only available through the commercial licensing agreement of **SQL Frames** (talk to your manager or organization).

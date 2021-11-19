@@ -1002,6 +1002,13 @@
     react "^17.0.2"
     react-dom "^17.0.2"
 
+"@sqlframes/repl-app@../lsdash/dist/sqlframes-repl-app-0.9.24.tgz":
+  version "0.9.24"
+  resolved "../lsdash/dist/sqlframes-repl-app-0.9.24.tgz#80d986a4e84206e0e7b9b016616a55ab8dfe9acd"
+  dependencies:
+    react "^17.0.2"
+    react-dom "^17.0.2"
+
 "@trysound/sax@0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"

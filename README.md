@@ -13,7 +13,7 @@ You can skip this and directly go to [Install & Start](#install_start) to get st
 
 ### Why the complexity?
 
-**SQL Frames** is an in-browser in-memory data, visualization and intelligence platform with several building blocks. Not all application need all the functionality of **SQL Frames**. In a traditional desktop or server-side software, there is usually no need worry to about the final executable size. However, that is not the case with code within the browser as it needs to be downloaded, compiled and executed and that can increase the initial load and render times. Hence, **SQL Frames** is designed to have several types of dependencies
+**SQL Frames** is an in-browser in-memory data, visualization and intelligence platform with several building blocks. Not all applications need all the functionality of **SQL Frames**. In a traditional desktop or server-side software, there is usually no need to worry about the final executable size. However, that is not the case with code within the browser as it needs to be downloaded, compiled and executed and that can increase the initial load and render times. Hence, **SQL Frames** is designed to have several types of dependencies
 
 1. required dependencies - these are must to make **SQL Frames** to work
 1. optional dependencies - these are optional and certain features of **SQL Frames** will not work if these dependencies are not provided
@@ -34,11 +34,13 @@ All of this adds complexity, but also provides a solid platform for creating adv
 
 In order to support the optional and dynamic dependencies and the ability to make use of CDN for 3rd party dependencies, **SQL Frames** leverages the AMD format and resolves the dependencies on the client-side.
 
-```
-Note: **SQL Frames** libraries are available as both UMD and ESM formats. Hence, custom build can be setup to pre-bundle all the dependencies of SQL Frames and not use the require.js based approach at all. Or the custom build can pre-bundle the required dependencies and leave out optional dependencies that may not be used at all.
+> Note: **SQL Frames** libraries are available as both UMD and ESM formats. Hence, custom
+> build can be setup to pre-bundle all the dependencies of SQL Frames and not use the
+> require.js based approach at all. Or the custom build can pre-bundle the required
+> dependencies and leave out optional dependencies that may not be used at all.
+> Unlike some 3rd party dependencies **SQL Frames** gives the control to the app in how
+> all the dependencies are resolved.
 
-Unlike some 3rd party dependencies **SQL Frames** gives the control to the app in how all the dependencies are resolved.
-```
 
 All the 3rd party javascript dependencies of **SQL Frames** are listed in `@sqlframes/repl-app/dist/libs.js`. They are not explicitly listed in the package.json (that may change) since the default approach is to resolve the dependencies on the client via CDN and not bundle them. The default require.js configuration is provided at `@sqlframes/repl-app/dist/main.js` which includes the previously mentioned `libs.js`. Usage of both these files is completely optional. This repository uses them to show how to setup the dependencies on the client-side.
 

@@ -53,6 +53,5 @@
     "url": "git@github.com:dirslashls/sqlframes-react-demo"
   },
   "dependencies": {
-    "@sqlframes/repl-app": "../lsdash/dist/sqlframes-repl-app-0.9.24.tgz"
   }
 }

@@ -78,6 +78,8 @@ cd sqlframes-react-demo
 yarn add <path-to-sqlframes-repl-app-<version>.tgz>
 ```
 
+> Note: if the tgz file is in the same directory, use `./<file>`
+
 4. Install other dependencies
 
 ```sh

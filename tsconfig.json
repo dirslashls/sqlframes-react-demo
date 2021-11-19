@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "outDir": "./build/",
+    "rootDir": "./src",
+    "noImplicitAny": false,
+    "module": "node12",
+    "target": "ESNext",
+    "jsx": "react",
+    "allowJs": true,
+  },
+  "include": ["./src/**/*.ts","./src/**/*.tsx"]
+}

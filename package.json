@@ -43,6 +43,8 @@
     "prettier": "^2.4.1",
     "sass-loader": "^12.2.0",
     "style-loader": "^3.3.0",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.2",
     "webpack": "^5.58.2",
     "webpack-cli": "^4.9.0",
     "webpack-dev-server": "^4.3.1",
@@ -53,5 +55,8 @@
     "url": "git@github.com:dirslashls/sqlframes-react-demo"
   },
   "dependencies": {
+    "@loadable/component": "^5.15.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }

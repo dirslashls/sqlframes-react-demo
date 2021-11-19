@@ -59,9 +59,9 @@ module.exports = {
     new CopyWebpackPlugin(
       { 
         patterns: [{
-          from: 'node_modules/@sqlframes/repl-app/dist/libs.js', to: 'js/sqlframes/libs.js' 
+          from: 'node_modules/@sqlframes/repl-app/dist/libs.mjs', to: 'js/sqlframes/libs.mjs' 
         },{
-          from: 'node_modules/@sqlframes/repl-app/dist/main.js', to: 'js/sqlframes/main.js' 
+          from: 'node_modules/@sqlframes/repl-app/dist/main.mjs', to: 'js/sqlframes/main.mjs' 
         },
         ]
       }),
@@ -95,7 +95,11 @@ module.exports = {
     rules: [
       // JavaScript: Use Babel to transpile JavaScript files
       { test: /\.js$/, use: ['babel-loader'] },
-
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
       // Images: Copy image files to build folder
       { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
 

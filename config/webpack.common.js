@@ -4,36 +4,48 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const paths = require('./paths')
 
-module.exports = {
-  // Where webpack looks to start building the bundle
-  entry: [paths.src + '/index.js'],
+const options = [
+  createTarget({ entry: 'index', outputType: 'amd-require', template: 'template', file: 'index' }),
+  createTarget({ entry: 'wrapper_index', outputType: 'global', template: 'wrapper_template', file: 'wrapper_index' })
+];
 
-  externals: [
-    'node-fetch',
-    'requirejs',
-    'date-fns',
-    'preact',
-    'eta',
-    'htm',
-    'dompurify',
-    'papaparse',
-    'monaco-editor',
-    'echarts',
-    '@yaireo/tagify',
-    'interactjs',
-    'lunr',
-    'highlight.js/lib/core',
-    'highlight.js/lib/languages/sql',
-    'cytoscape',
-    'exceljs',
-  ],
+console.debug(options);
+
+module.exports = options[1];
+
+function createTarget({ entry, outputType, template, file }) {
+  const options = 
+{
+  name: entry,
+  // Where webpack looks to start building the bundle
+  entry: paths.src + `/${entry}.js`,
+
+  externals: {
+    'node-fetch': { amd: 'node-fetch', global: 'fetch' },
+    'requirejs': 'requirejs',
+    'date-fns': { amd: 'date-fns', global: 'dateFns' },
+    'preact': 'preact',
+    'eta': { amd: 'eta', global: 'Eta' },
+    'htm': 'htm',
+    'dompurify': { amd: 'dompurify', global: 'DOMPurify' },
+    'papaparse': 'papaparse',
+    'monaco-editor': { amd: 'monaco-editor', global: 'monaco' },
+    'echarts': 'echarts',
+    '@yaireo/tagify': {amd: '@yaireo/tagify', global: 'Tagify' },
+    'interactjs': { amd: 'interactjs', global: 'interact' },
+    'lunr': 'lunr',
+    'highlight.js/lib/core': {  amd: 'highlight.js/lib/core', global: 'hljs' },
+    'highlight.js/lib/languages/sql': { amd: 'highlight.js/lib/languages/sql', global: 'hljsSql' },
+    'cytoscape': 'cytoscape',
+    'exceljs': { amd: 'exceljs', global: 'ExcelJS' },
+  },
   // Where webpack outputs the assets and bundles
   output: {
     path: paths.build,
     filename: '[name].bundle.js',
     publicPath: '/',
     library: {
-      type: 'amd-require'
+      type: outputType
     }
   },
 
@@ -85,8 +97,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'SQL Frames + React DEMO',
       // favicon: paths.src + '/images/favicon.png',
-      template: paths.src + '/template.html', // template file
-      filename: 'index.html', // output file
+      template: paths.src + `/${template}.html`, // template file
+      filename: `${file}.html`, // output file
     }),
   ],
 
@@ -110,10 +122,12 @@ module.exports = {
 
   resolve: {
     modules: [paths.src, 'node_modules'],
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
     alias: {
       '@': paths.src,
       assets: paths.public,
     },
   },
+}
+  return options;
 }

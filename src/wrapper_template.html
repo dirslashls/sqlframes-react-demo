@@ -8,15 +8,16 @@
 		<link rel="stylesheet" data-theme='dark' disabled type="text/css" href="/styles/themes/dark.css"/>
     <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.js" integrity="sha256-lIXwkX+X/PT2Ol6jZSAP/VfxI/RROCovmhrS4v1RrJs=" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type='module'>
-      import sfloader from '/js/sqlframes/main.mjs';
-      sfloader.setupDependencies();
+        import * as dateFns from 'https://cdn.jsdelivr.net/npm/date-fns@2.16.1/esm/index.js';
+        globalThis.dateFns = dateFns;
     </script>
+
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
 
   <body>
-    <div id="root" class="sqlframes"></div>
-    <hr/>
-    <a href='/wrapper_template.html'>Dynamic loading with code splitting</a>
+    <h2>Dynamic loading with code splitting</h2>
+    <div id="root1" class="sqlframes"></div>
+    <div id="root2" class="sqlframes"></div>
   </body>
 </html>

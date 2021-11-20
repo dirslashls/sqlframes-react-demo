@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Wrapper from "./js/Wrapper";
+import WrapperApp from "./js/WrapperApp";
 
-ReactDOM.render(<Wrapper />, document.getElementById("root1"));
+ReactDOM.render(<WrapperApp/>, document.getElementById("root1"));
 
-ReactDOM.render(<Wrapper />, document.getElementById("root2"));
+ReactDOM.render(<WrapperApp/>, document.getElementById("root2"));

@@ -9,9 +9,8 @@ const options = [
   createTarget({ entry: 'wrapper_index', outputType: 'global', template: 'wrapper_template', file: 'wrapper_index' })
 ];
 
-console.debug(options);
-
-module.exports = options[1];
+// module.exports = options[0]; // full app
+module.exports = options[1]; // dynamic loading
 
 function createTarget({ entry, outputType, template, file }) {
   const options = 
@@ -23,7 +22,7 @@ function createTarget({ entry, outputType, template, file }) {
   externals: {
     'node-fetch': { amd: 'node-fetch', global: 'fetch' },
     'requirejs': 'requirejs',
-    'date-fns': { amd: 'date-fns', global: 'dateFns' },
+    // 'date-fns': { amd: 'date-fns', global: 'dateFns' }, // example of pre-bundling date-fns
     'preact': 'preact',
     'eta': { amd: 'eta', global: 'Eta' },
     'htm': 'htm',
@@ -52,7 +51,7 @@ function createTarget({ entry, outputType, template, file }) {
   // Customize the webpack build process
   plugins: [
     // Removes/cleans build folders and unused assets when rebuilding
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
 
     // Copies files from target to destination folder
     new CopyWebpackPlugin({

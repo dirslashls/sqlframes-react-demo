@@ -66,13 +66,13 @@ At this time **SQL Frames** is not distributed via npm. Assuming you have downlo
 git clone https://github.com/dirslashls/sqlframes-react-demo
 ```
 
-2. Change to sqlframes-react-demo directory
+1. Change to sqlframes-react-demo directory
 
 ```sh
 cd sqlframes-react-demo
 ```
 
-3. Add **SQL Frames** library dependency
+1. Add **SQL Frames** library dependency
 
 ```sh
 yarn add <path-to-sqlframes-repl-app-<version>.tgz>
@@ -80,15 +80,34 @@ yarn add <path-to-sqlframes-repl-app-<version>.tgz>
 
 > Note: if the tgz file is in the same directory, use `./<file>`
 
-4. Install other dependencies
+1. Install other dependencies
 
 ```sh
 yarn install
 ```
 
-5. Start the server
+1. Start the server
 
 ```sh
 yarn start
 ```
 
+## Bundling options
+
+When building an app that use SQL Frames, there are two ways to bundle.
+
+1. Bundle SQL Frames along with the app
+2. Bundle SQL Frames as a component that is loaded on-demand
+
+### Which option to use?
+
+1. Bundling together
+	1. App primarily uses SQL Frames
+2. Bundling for on-demand loading
+	1. App may use SQL Frames
+	2. Improve initial rendering UX by rendering the some parts of the application and loading the rest with appropriate indicator like spinners.
+
+The default configuration accessible at `/index.html` uses the first option.
+To try out the second option, go to [webpack.common.js](/config/webpack.common.js) and look for _full app_ and _dynamic loading_ and comment one of the lines as required and restart the server. The dynamic loading option is available at `/wrapper_index.html`.
+
+> Note: The reason for this complexity is that in dev-server mode webpack seems to have issues with multiple entries (and tries to load scripts related to dynamic loading entry point when using the full loading entry point). This is not an issue for the production build (`yarn build`)

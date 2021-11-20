@@ -5,7 +5,7 @@ const { merge } = require('webpack-merge')
 const paths = require('./paths')
 const common = require('./webpack.common.js')
 
-module.exports = merge(common, {
+const config = {
   mode: 'production',
   devtool: false,
   output: {
@@ -52,4 +52,15 @@ module.exports = merge(common, {
     maxEntrypointSize: 512000,
     maxAssetSize: 512000,
   },
-})
+}
+
+if(Array.isArray(common)) {
+  module.exports = common.map((cmn,idx) => {
+    const cfg = merge(cmn, config);
+    if(idx > 0) delete cfg.devServer;
+    console.debug(cfg);
+    return cfg;
+  });
+} else {
+  module.exports = merge(common,config);
+}

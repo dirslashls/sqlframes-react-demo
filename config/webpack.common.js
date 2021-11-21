@@ -9,8 +9,8 @@ const options = [
   createTarget({ entry: 'wrapper_index', outputType: 'global', template: 'wrapper_template', file: 'wrapper_index' })
 ];
 
-// module.exports = options[0]; // full app
-module.exports = options[1]; // dynamic loading
+module.exports = options[0]; // full app
+// module.exports = options[1]; // dynamic loading
 
 function createTarget({ entry, outputType, template, file }) {
   const options = 

@@ -60,6 +60,9 @@ The `@sqlframes/repl/react` entry point exposes three namespaces, `sqlframes`, `
 
 At this time **SQL Frames** is not distributed via npm. Assuming you have downloaded the **SQL Frames** package (typically a `sqlframes-repl-app-<version>.tgz` file), following steps can be followed.
 
+Also make sure `typescript@4.5.2` or later is installed (package.json `exports`
+support is available in typescript from this version onwards)
+
 1. Clone this repository
 
 ```sh
@@ -110,4 +113,4 @@ When building an app that use SQL Frames, there are two ways to bundle.
 The default configuration accessible at `/index.html` uses the first option.
 To try out the second option, go to [webpack.common.js](/config/webpack.common.js) and look for _full app_ and _dynamic loading_ and comment one of the lines as required and restart the server. The dynamic loading option is available at `/wrapper_index.html`.
 
-> Note: The reason for this complexity is that in dev-server mode webpack seems to have issues with multiple entries (and tries to load scripts related to dynamic loading entry point when using the full loading entry point). This is not an issue for the production build (`yarn build`)
+> Note: The reason for this complexity is that in dev-server mode webpack seems to have issues with multiple entries ([see this](https://github.com/webpack/webpack-dev-server/issues/2692)). This is not an issue for the production build (`yarn build`)

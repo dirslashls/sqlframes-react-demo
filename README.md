@@ -60,8 +60,7 @@ The `@sqlframes/repl/react` entry point exposes three namespaces, `sqlframes`, `
 
 At this time **SQL Frames** is not distributed via npm. Assuming you have downloaded the **SQL Frames** package (typically a `sqlframes-repl-app-<version>.tgz` file), following steps can be followed.
 
-Also make sure `typescript@4.5.2` or later is installed (package.json `exports`
-support is available in typescript from this version onwards)
+Also make sure `typescript@next` is installed (for [NodeJS 12.7+ package exports](https://github.com/microsoft/TypeScript/issues/33079))
 
 1. Clone this repository
 
@@ -75,19 +74,19 @@ git clone https://github.com/dirslashls/sqlframes-react-demo
 cd sqlframes-react-demo
 ```
 
-1. Add **SQL Frames** library dependency
-
-```sh
-yarn add <path-to-sqlframes-repl-app-<version>.tgz>
-```
-
-> Note: if the tgz file is in the same directory, use `./<file>`
-
-1. Install other dependencies
+1. Install dependencies
 
 ```sh
 yarn install
 ```
+
+1. Add **SQL Frames** library dependency
+
+```sh
+npm install <path-to-sqlframes-repl-app-<version>.tgz> --no-save
+```
+
+> Note: Use npm instead of yarn as this is a local dependency and avoid adding it to `package.json`.
 
 1. Start the server
 

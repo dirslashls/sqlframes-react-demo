@@ -10,7 +10,7 @@ import '@sqlframes/repl-app/styles';
 
 // All the top level classes and objects exported in the namespaces
 const { DataFrame, SQL, Time, View } = sqlframes;
-const { REPL, REPLView, Scope } = repl;
+const { REPL, REPLView } = repl;
 const { ReactREPL } = repl_react;
 
 // for autosuggest of the SQL Frames API within the REPL editor
@@ -20,7 +20,7 @@ class App extends Component{
 	render(){
 		return(
 			<div className="App">
-				<ReactREPL scope={Scope}/>
+				<ReactREPL/>
 			</div>
 		);
 	}

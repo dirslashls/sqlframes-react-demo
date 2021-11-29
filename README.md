@@ -1,7 +1,9 @@
 _This repository is based on the [Webpack boilerplate repository](https://github.com/taniarascia/webpack-boilerplate)_ 
 # SQL Frames + React DEMO
 
-This repository provides a working example of how to integrate [SQL Frames](https://sqlframes.com) with React. Each application is unique in its needs and dependencies. Hence, this should only be taken as a reference and should not rely on this for a complete solution for the application to work with many other internal/external dependencies. A strong understanding of Webpack, ES Modules and AMD (require.js) can come a long way to solve complex application specific bundling requirements.
+[**SQL Frames**](https://sqlframes.com/) is an in-browser in-memory data, visualization and intelligence platform with several building blocks.
+
+This repository provides a working example of how to integrate **SQL Frames** with React. Each application is unique in its needs and dependencies. Hence, this should only be taken as a reference and should not rely on this for a complete solution for the application to work with many other internal/external dependencies. A strong understanding of Webpack, ES Modules and AMD (require.js) can come a long way to solve complex application specific bundling requirements.
 
 ***
 DISCLAIMER - This code is provided only as an example and does not come with any implied guarantee of support. Official support is only available through the commercial licensing of **SQL Frames**.
@@ -13,7 +15,7 @@ You can skip this and directly go to [Install & Start](#install_start) to get st
 
 ### Why the complexity?
 
-**SQL Frames** is an in-browser in-memory data, visualization and intelligence platform with several building blocks. Not all applications need all the functionality of **SQL Frames**. In a traditional desktop or server-side software, there is usually no need to worry about the final executable size. However, that is not the case with code within the browser as it needs to be downloaded, compiled and executed and that can increase the initial load and render times. Hence, **SQL Frames** is designed to have several types of dependencies
+ Not all applications need all the functionality of **SQL Frames**. In a traditional desktop or server-side software, there is usually no need to worry about the final executable size. However, that is not the case with code within the browser as it needs to be downloaded, compiled and executed and that can increase the initial load and render times. Hence, **SQL Frames** is designed to have several types of dependencies
 
 1. required dependencies - these are must to make **SQL Frames** to work
 1. optional dependencies - these are optional and certain features of **SQL Frames** will not work if these dependencies are not provided
@@ -60,7 +62,7 @@ The `@sqlframes/repl/react` entry point exposes three namespaces, `sqlframes`, `
 
 At this time **SQL Frames** is not distributed via npm. Assuming you have downloaded the **SQL Frames** package (typically a `sqlframes-repl-app-<version>.tgz` file), following steps can be followed.
 
-Also make sure `typescript@next` is installed (for [NodeJS 12.7+ package exports](https://github.com/microsoft/TypeScript/issues/33079))
+**SQL Frames** uses named exports which are supported by TypeScript using `module="node12"` starting [4.5 Beta](https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/#esm-nodejs). Even though it is available in 4.5 beta, make sure `typescript@next` is installed (for [NodeJS 12.7+ package exports](https://github.com/microsoft/TypeScript/issues/33079))
 
 1. Clone this repository
 

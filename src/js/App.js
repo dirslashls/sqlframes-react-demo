@@ -32,9 +32,9 @@ const ChartApp = () => {
 	const { groupBy, where: { eq }, agg: { count } } = SQL;
 	const chart = () => {
 		const gdf = df.gdf(groupBy('type'));
-		return gdf.chart.bar('type','Count').fo
+		return gdf.chart.bar('type','Count')
 					.resize(600,400)
-					.svg().of;
+					.svg();
 	};
 
 	useEffect(() =>{

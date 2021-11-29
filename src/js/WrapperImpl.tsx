@@ -1,3 +1,4 @@
+import React, { useRef, useEffect } from 'react';
 // Destructuring assignment of the exported namespaces 
 import { sqlframes, repl, repl_react } from '@sqlframes/repl-app/react';
 // to ensure the css is also bundled into the application css bundle
@@ -12,3 +13,15 @@ const { ReactREPL } = repl_react;
 REPLView.addExtraLibs('/api/api.d.ts','api.d.ts');
 
 export default ReactREPL;
+
+const DataFrameComponent = function({ df }) {
+	const ref = useRef(null);
+
+	useEffect(() => {
+		View.render(ref.current,df);
+	});
+
+	return (
+		<div ref={ref}></div>
+	)
+}

@@ -63,4 +63,4 @@ export default loadable(async () => {
 	return import('./WrapperImpl');
 },{
 	fallback: <div style={{height:'5em'}}><div className="loader">Loading...</div></div>
-})
+});

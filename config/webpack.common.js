@@ -22,21 +22,17 @@ function createTarget({ entry, outputType, template, file }) {
   externals: {
     'node-fetch': { amd: 'node-fetch', global: 'fetch' },
     'requirejs': 'requirejs',
-    // 'date-fns': { amd: 'date-fns', global: 'dateFns' }, // example of pre-bundling date-fns
-    'preact': 'preact',
-    'eta': { amd: 'eta', global: 'Eta' },
-    'htm': 'htm',
     'dompurify': { amd: 'dompurify', global: 'DOMPurify' },
+    // 'date-fns': { amd: 'date-fns', global: 'dateFns' }, // example of pre-bundling date-fns
     'papaparse': 'papaparse',
     'monaco-editor': { amd: 'monaco-editor', global: 'monaco' },
-    'echarts': 'echarts',
+    'htm': 'htm',
+    'preact': 'preact',
     '@yaireo/tagify': {amd: '@yaireo/tagify', global: 'Tagify' },
     'interactjs': { amd: 'interactjs', global: 'interact' },
-    'lunr': 'lunr',
-    'highlight.js/lib/core': {  amd: 'highlight.js/lib/core', global: 'hljs' },
-    'highlight.js/lib/languages/sql': { amd: 'highlight.js/lib/languages/sql', global: 'hljsSql' },
-    'cytoscape': 'cytoscape',
-    'exceljs': { amd: 'exceljs', global: 'ExcelJS' },
+    'echarts': 'echarts',
+    'acorn': 'acorn',
+    'eta': { amd: 'eta', global: 'Eta' },
   },
   // Where webpack outputs the assets and bundles
   output: {

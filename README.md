@@ -82,14 +82,6 @@ cd sqlframes-react-demo
 yarn install
 ```
 
-1. Add **SQL Frames** library dependency
-
-```sh
-npm install <path-to-sqlframes-repl-app-<version>.tgz> --no-save
-```
-
-> Note: Use npm instead of yarn as this is a local dependency and avoid adding it to `package.json`.
-
 1. Start the server
 
 ```sh

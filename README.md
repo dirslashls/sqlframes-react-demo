@@ -60,8 +60,6 @@ The `@sqlframes/repl/react` entry point exposes three namespaces, `sqlframes`, `
 
 ## <a name='install_start'></a> Install & Start
 
-At this time **SQL Frames** is not distributed via npm. Assuming you have downloaded the **SQL Frames** package (typically a `sqlframes-repl-app-<version>.tgz` file), following steps can be followed.
-
 **SQL Frames** uses named exports which are supported by TypeScript using `module="node12"` starting [4.5 Beta](https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/#esm-nodejs). Even though it is available in 4.5 beta, make sure `typescript@next` is installed (for [NodeJS 12.7+ package exports](https://github.com/microsoft/TypeScript/issues/33079))
 
 1. Clone this repository
@@ -70,13 +68,7 @@ At this time **SQL Frames** is not distributed via npm. Assuming you have downlo
 git clone https://github.com/dirslashls/sqlframes-react-demo
 ```
 
-1. Change to sqlframes-react-demo directory
-
-```sh
-cd sqlframes-react-demo
-```
-
-1. Install dependencies
+1. Go into the cloned repository and install dependencies
 
 ```sh
 yarn install
@@ -101,9 +93,9 @@ When building an app that use SQL Frames, there are two ways to bundle.
 	1. App primarily uses SQL Frames
 2. Bundling for on-demand loading
 	1. App may use SQL Frames
-	2. Improve initial rendering UX by rendering the some parts of the application and loading the rest with appropriate indicator like spinners.
+	2. Improve initial rendering UX by rendering some parts of the application and loading the rest with appropriate indicator like spinners.
 
 The default configuration accessible at `/index.html` uses the first option.
 To try out the second option, go to [webpack.common.js](/config/webpack.common.js) and look for _full app_ and _dynamic loading_ and comment one of the lines as required and restart the server. The dynamic loading option is available at `/wrapper_index.html`.
 
-> Note: The reason for this complexity is that in dev-server mode webpack seems to have issues with multiple entries ([see this](https://github.com/webpack/webpack-dev-server/issues/2692)). This is not an issue for the production build (`yarn build`)
+> Note: The reason for this manual step is that in dev-server mode webpack seems to have issues with multiple entries ([see this](https://github.com/webpack/webpack-dev-server/issues/2692)). This is not an issue for the production build (`yarn build`)

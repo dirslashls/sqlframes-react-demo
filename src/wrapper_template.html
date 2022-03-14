@@ -13,14 +13,15 @@
         globalThis.dateFns = dateFns;
     </script> 
     -->
-
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
 
   <body>
     <h2>Dynamic loading with code splitting</h2>
-    <div id="root1" class="sqlframes"></div>
-    <div id="root2" class="sqlframes"></div>
+    <div class="sf">
+      <div id="root1"></div>
+      <div id="root2"></div>
+    </div>
     <a href="/index.html">Home</a>
   </body>
 </html>

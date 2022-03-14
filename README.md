@@ -60,7 +60,7 @@ The `@sqlframes/repl/react` entry point exposes three namespaces, `sqlframes`, `
 
 ## <a name='install_start'></a> Install & Start
 
-**SQL Frames** uses named exports which are supported by TypeScript using `module="node12"` starting [4.5 Beta](https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/#esm-nodejs). Even though it is available in 4.5 beta, make sure `typescript@next` is installed (for [NodeJS 12.7+ package exports](https://github.com/microsoft/TypeScript/issues/33079))
+**SQL Frames** uses named exports which are supported by TypeScript using `module="node12"` starting [4.5 Beta](https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/#esm-nodejs). Even though it is available in 4.5 beta, make sure `typescript@4.6.2` or later is installed (for [NodeJS 12.7+ package exports](https://github.com/microsoft/TypeScript/issues/33079))
 
 1. Clone this repository
 

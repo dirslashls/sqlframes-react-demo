@@ -28,7 +28,7 @@ const config = {
             },
           },
           'postcss-loader',
-          'sass-loader',
+          /* 'sass-loader', */
         ],
       },
     ],

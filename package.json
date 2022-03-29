@@ -55,7 +55,7 @@
   },
   "dependencies": {
     "@loadable/component": "^5.15.0",
-    "@sqlframes/repl-app": "^0.10.12",
+    "@sqlframes/repl-app": "^0.11.0",
     "date-fns": "^2.26.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

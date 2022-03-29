@@ -33,6 +33,7 @@ function createTarget({ entry, outputType, template, file }) {
     'echarts': 'echarts',
     'acorn': 'acorn',
     'eta': { amd: 'eta', global: 'Eta' },
+    '@floating-ui/dom': { amd: '@floating-ui/dom', global: 'FloatingUIDOM' }
   },
   // Where webpack outputs the assets and bundles
   output: {

@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
 		<link rel="stylesheet" data-theme='light' type="text/css" href="/styles/themes/light.css"/>
 		<link rel="stylesheet" data-theme='dark' disabled type="text/css" href="/styles/themes/dark.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.js" integrity="sha256-lIXwkX+X/PT2Ol6jZSAP/VfxI/RROCovmhrS4v1RrJs=" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type='module'>
-      import {esmLibs} from '/js/sqlframes/libs.mjs';
-      esmLibs['date-fns'] = undefined;
-      import sfloader from '/js/sqlframes/main.mjs';
-      await sfloader.setupDependencies();
-    </script>
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
+	<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.js" integrity="sha256-lIXwkX+X/PT2Ol6jZSAP/VfxI/RROCovmhrS4v1RrJs=" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script type='module'>
+		import {esmLibs} from '/js/sqlframes/libs.mjs';
+		esmLibs['date-fns'] = undefined;
+		import sfloader from '/js/sqlframes/main.mjs';
+		define('monaco-editor',['vs/editor/editor.main'],(monaco) => {
+			monaco.editor.setTheme('vs-dark');
+			return monaco;
+		});
+		await sfloader.setupDependencies();
+	</script>
+	<title><%= htmlWebpackPlugin.options.title %></title>
+	</head>
 
-  <body>
-    <div class="sf">
-      <h2>REPL</h2>
-      <div id="root"></div>
-      <h2>Chart</h2>
-      <div id="chart"></div>
-    </div>
-    <hr/>
-    <a href='/wrapper_index.html'>Dynamic loading with code splitting</a>
-  </body>
+	<body>
+	<div class="sf">
+		<h2>REPL</h2>
+		<div id="root"></div>
+		<h2>Chart</h2>
+		<div id="chart"></div>
+	</div>
+	<hr/>
+	<a href='/wrapper_index.html'>Dynamic loading with code splitting</a>
+	</body>
 </html>

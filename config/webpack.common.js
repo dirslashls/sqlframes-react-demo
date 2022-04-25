@@ -118,6 +118,7 @@ function createTarget({ entry, outputType, template, file }) {
 
   resolve: {
     modules: [paths.src, 'node_modules'],
+    conditionNames: ['import'],
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
     alias: {
       '@': paths.src,

@@ -1,5 +1,7 @@
-import React, { Component, useRef, useEffect, createRef} from "react";
+import React, { Component, useRef, useEffect } from "react";
 import "./App.css";
+import { REPLReact } from "./REPLReact";
+import { DataFrameComponent } from "./DataFrameComponent";
 
 // this is an example to bundle SQL Frames directly into the app
 
@@ -10,23 +12,10 @@ import '@sqlframes/repl-app/styles';
 
 // All the top level classes and objects exported in the namespaces
 const { DataFrame, SQL, Time, View } = sqlframes;
-const { REPL, REPLView } = repl;
-
-// for autosuggest of the SQL Frames API within the REPL editor
-REPLView.addExtraLibs('/api/api.d.ts','api.d.ts');
 
 class App extends Component{
-	replRef = createRef<HTMLDivElement>();
 	render(){
-		return(
-			<div ref={this.replRef} className="App">
-			</div>
-		);
-	}
-
-	componentDidMount() {
-		const _repl = new REPL();
-		View.render(this.replRef.current,_repl);
+		return <REPLReact/>
 	}
 }
 
@@ -48,6 +37,7 @@ const ChartApp = () => {
 	return (
 		<div>
 			<div ref={chartRef}></div>
+			<DataFrameComponent df={df}/>
 		</div>
 	)
 }

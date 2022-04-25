@@ -60,7 +60,8 @@ async function loadDependencies() {
 export default loadable(async () => {
 	console.debug('loading');
 	await loadDependencies();
-	return import('./WrapperImpl');
+	const { REPLReact } = await import('./REPLREact');
+	return REPLReact;
 },{
 	fallback: <div style={{height:'5em'}}><div className="loader">Loading...</div></div>
 });

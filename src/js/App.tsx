@@ -16,7 +16,7 @@ const { REPL, REPLView } = repl;
 REPLView.addExtraLibs('/api/api.d.ts','api.d.ts');
 
 class App extends Component{
-	replRef = createRef();
+	replRef = createRef<HTMLDivElement>();
 	render(){
 		return(
 			<div ref={this.replRef} className="App">
@@ -26,13 +26,12 @@ class App extends Component{
 
 	componentDidMount() {
 		const _repl = new REPL();
-		_repl.scope = repl.Scope;
 		View.render(this.replRef.current,_repl);
 	}
 }
 
 const ChartApp = () => {
-	const chartRef = useRef('chart');
+	const chartRef = useRef(null);
 	const df = DataFrame.fromURL('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.csv');
 	const { groupBy, where: { eq }, agg: { count } } = SQL;
 	const chart = () => {

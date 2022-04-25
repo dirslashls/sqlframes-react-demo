@@ -56,7 +56,7 @@ The main change to the webpack configuration is in the `webpack.common.js` file.
 
 ### Building wrappers
 
-The `@sqlframes/repl/react` entry point exposes three namespaces, `sqlframes`, `repl` and `repl_react`. Refer to [App.js](/src/js/App.js) to see all the top level classes/objects exposed in each of these namespaces.
+The `@sqlframes/repl/react` entry point exposes three namespaces, `sqlframes`, `repl` and `repl_react`. Refer to [App.tsx](/src/js/App.tsx) to see all the top level classes/objects exposed in each of these namespaces.
 
 ## <a name='install_start'></a> Install & Start
 

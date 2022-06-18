@@ -2,7 +2,6 @@ import React from 'react';
 import loadable from '@loadable/component';
 import { libs, monacoURL } from '@sqlframes/repl-app/client/dependencies';
 
-
 async function loadDependencies() {
 	const require = globalThis.require as any;
 	const define = globalThis.define as any;
@@ -57,9 +56,11 @@ async function loadDependencies() {
 	});
 }
 
+// @ts-ignore - to avoid "TS2769: No overload matches this call".
 export default loadable(async () => {
 	console.debug('loading');
 	await loadDependencies();
+	// @ts-ignore
 	const { REPLReact } = await import('./REPLREact');
 	return REPLReact;
 },{

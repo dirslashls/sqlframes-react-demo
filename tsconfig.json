@@ -3,7 +3,7 @@
     "outDir": "./build/",
     "rootDir": "./src",
     "noImplicitAny": false,
-    "module": "node12",
+    "module": "NodeNext",
     "target": "ESNext",
     "jsx": "react",
     "allowJs": true,

@@ -7,16 +7,10 @@ async function loadDependencies() {
 	const define = globalThis.define as any;
 	require.config({ paths: libs });
 	define('monaco-editor',['vs/editor/editor.main'],(m) => m);
-	define('htm/preact',['htm','preact'],(htm,preact) => ({ html: htm.bind(preact.h), ...preact}));
-	require(['htm/preact'],(m) => {
-		globalThis.htm_preact = m;
-	});
-
 	// dynamic modlules - these are defined as undefined if not already present so they are loaded ondemand
 	define('exceljs',() => globalThis.exceljs ?? void 0);
 	define('lunr',() => globalThis.lunr ?? void 0);
 	define('cytoscape',() => globalThis.cytoscape ?? void 0);
-	define('jsonify',() => JSON);
 	define('sqlframes',['htm','preact','echarts','exceljs','monaco-editor','lunr','@yaireo/tagify','acorn','interactjs','dompurify','eta','papaparse','highlightjs','cytoscape'],
 						(htm,preact,echarts,exceljs,monaco,lunr,Tagify,acorn,interact,DOMPurify,Eta,papaparse,highlightjs,cytoscape) => {
 		globalThis.htm = htm;

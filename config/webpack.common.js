@@ -26,7 +26,6 @@ function createTarget({ entry, outputType, template, file }) {
     // 'date-fns': { amd: 'date-fns', global: 'dateFns' }, // example of pre-bundling date-fns
     'papaparse': 'papaparse',
     'monaco-editor': { amd: 'monaco-editor', global: 'monaco' },
-    'htm': 'htm',
     'preact': 'preact',
     '@yaireo/tagify': {amd: '@yaireo/tagify', global: 'Tagify' },
     'interactjs': { amd: 'interactjs', global: 'interact' },

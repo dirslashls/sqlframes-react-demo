@@ -6,14 +6,18 @@ async function loadDependencies() {
 	const require = globalThis.require as any;
 	const define = globalThis.define as any;
 	require.config({ paths: libs });
-	define('monaco-editor',['vs/editor/editor.main'],(m) => m);
+	define('path',() => {});
+	define('fs',() => {});
+	define('monaco-editor',['vs/editor/editor.main'],(monaco) => {
+		monaco.editor.setTheme('vs-dark');
+		return monaco;
+	});
 	// dynamic modlules - these are defined as undefined if not already present so they are loaded ondemand
 	define('exceljs',() => globalThis.exceljs ?? void 0);
 	define('lunr',() => globalThis.lunr ?? void 0);
 	define('cytoscape',() => globalThis.cytoscape ?? void 0);
-	define('sqlframes',['htm','preact','echarts','exceljs','monaco-editor','lunr','@yaireo/tagify','acorn','interactjs','dompurify','eta','papaparse','highlightjs','cytoscape'],
-						(htm,preact,echarts,exceljs,monaco,lunr,Tagify,acorn,interact,DOMPurify,Eta,papaparse,highlightjs,cytoscape) => {
-		globalThis.htm = htm;
+	define('sqlframes',['preact','echarts','exceljs','monaco-editor','lunr','@yaireo/tagify','acorn','interactjs','dompurify','eta','papaparse','highlightjs','cytoscape'],
+						(preact,echarts,exceljs,monaco,lunr,Tagify,acorn,interact,DOMPurify,Eta,papaparse,highlightjs,cytoscape) => {
 		globalThis.preact = preact;
 		globalThis.echarts = echarts;
 		globalThis.ExcelJS = exceljs;
@@ -55,7 +59,7 @@ export default loadable(async () => {
 	console.debug('loading');
 	await loadDependencies();
 	// @ts-ignore
-	const { REPLReact } = await import('./REPLREact');
+	const { REPLReact } = await import('./REPLReact');
 	return REPLReact;
 },{
 	fallback: <div style={{height:'5em'}}><div className="loader">Loading...</div></div>

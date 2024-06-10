@@ -14,11 +14,8 @@
 		import {esmLibs} from '/js/sqlframes/libs.mjs';
 		esmLibs['date-fns'] = undefined;
 		import sfloader from '/js/sqlframes/main.mjs';
-		define('monaco-editor',['vs/editor/editor.main'],(monaco) => {
-			monaco.editor.setTheme('vs-dark');
-			return monaco;
-		});
 		await sfloader.setupDependencies();
+		require = requirejs.config({ context: 'sf' });
 	</script>
 	<title><%= htmlWebpackPlugin.options.title %></title>
 	</head>

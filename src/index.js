@@ -1,5 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import App, { ChartApp } from "@/js/App.tsx";
-ReactDOM.render(<App />, document.getElementById("root"));
-ReactDOM.render(<ChartApp />, document.getElementById("chart"));
+import { createRoot } from "react-dom/client";
+createRoot(document.getElementById("root")).render(<App/>);
+createRoot(document.getElementById("chart")).render(<ChartApp />);

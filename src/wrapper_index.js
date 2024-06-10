@@ -1,7 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import WrapperApp from "./js/WrapperApp";
 
-ReactDOM.render(<WrapperApp/>, document.getElementById("root1"));
-
-ReactDOM.render(<WrapperApp/>, document.getElementById("root2"));
+createRoot(document.getElementById("root1")).render(<WrapperApp/>);
+createRoot(document.getElementById("root2")).render(<WrapperApp/>);
